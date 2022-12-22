@@ -40,6 +40,9 @@ let rootValue = resolvers;
 
 const app = express();
 app.use(cors());
+app.get('/', (req, res) => {
+    res.send('Basic GraphQl API, developed by JoseDev');
+})
 app.use('/graphql', graphqlHTTP({
     schema: schema,
     rootValue: rootValue,
